@@ -1,0 +1,89 @@
+.form-cell_title {
+  margin-bottom: 10px;
+  font-size: medium;
+}
+
+.form-cell_title-placeholder {
+  font-size: small;
+  color: lightgray;
+}
+
+.upload-text {
+  margin-left: auto;
+  opacity: 0.5;
+}
+
+.upload {
+  width: 15px;
+  height: 15px;
+  margin-left: 10px;
+}
+
+.option {
+  margin-left: 15vw;
+}
+
+.selector {
+  width: 15px;
+  height: 15px;
+  margin-left: auto;
+}
+
+.footer {
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  border-top: lightgray solid 1px;
+}
+
+.footer view {
+  width: 50%;
+  height: 100%;
+  padding-top: 2vh;
+  text-align: center;
+}
+
+.reset {
+  background: white;
+}
+
+.save {
+  color: white;
+  background: #353535;
+}
+
+.stepper {
+	width: 80px;
+	height: 26px;
+	/*给主容器设一个边框*/
+	border: 1px solid #ccc;
+	border-radius: 3px;
+  margin:0 auto;
+  /* float: right; */
+}
+
+.stepper text {
+	width: 19px;
+	line-height: 26px;
+	text-align: center;
+	float: left;
+}
+ 
+/*数值*/
+.stepper input {
+	width: 40px;
+	height: 26px;
+	float: left;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 12px;
+	/*给中间的input设置左右边框即可*/
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+
+.expiration_display {
+  color: grey;
+}

@@ -1,0 +1,1 @@
+"/Applications/wechatwebdevtools.app/Contents/MacOS/cli" cloud functions deploy --e cloud1-4gnuo1dwca99f2ca --n quickstartFunctions --r --project "/Users/zhenxiangjin/Projects/WechatMiniApp/warehouse_management" --report_first --report

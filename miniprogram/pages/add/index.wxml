@@ -1,0 +1,77 @@
+<wxs module="util" src="../util.wxs" />
+<view class="container">
+  <view class="form-group">
+    <view class="form-cell">
+      <view class="form-cell_title">物品名称</view>
+      <input class="form-cell_input" placeholder="请输入物品名称（10字以内）" placeholder-class="form-cell_title-placeholder"
+        bindinput="onTitleInput" value="{{title}}" />
+    </view>
+    <view class="form-cell">
+      <view class="form-cell_title">详细描述</view>
+      <input class="form-cell_input" placeholder="请输入详细描述（100字以内）" placeholder-class="form-cell_title-placeholder"
+        bindinput="onDescInput" value="{{desc}}" />
+    </view>
+  </view>
+  <view class="form-group">
+    <view class="form-cell inline">
+      <view>添加照片</view>
+      <view class="upload-text" bindtap="addFile">
+        {{(files.length === 0 ? "点击添加照片" : util.filterStr(fileName, 15))}}
+      </view>
+      <image class="upload" bindtap="addFile" src="../../images/add/next.png"></image>
+    </view>
+  </view>
+  <view class="form-group">
+    <view class="form-cell inline">
+      <view>物品数量</view>
+      <view class="stepper">
+        <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+        <input type="number" bindchange="bindManual" value="{{count}}" />
+        <text class="normal" bindtap="bindPlus">+</text>
+      </view>
+    </view>
+
+    <view class="form-cell inline">
+      <view>保存条件</view>
+      <picker class="option" bindchange="onChooseFreq" range="{{storageOptions}}">
+        {{storageOptions[storageSelectIndex]}}
+      </picker>
+      <picker class="selector" bindchange="onChooseFreq" range="{{storageOptions}}">
+        <image class="selector" src="../../images/add/next.png" />
+      </picker>
+    </view>
+
+    <view class="form-cell inline">
+      <view>生产日期</view>
+      <picker class="option" mode="date" start="2000-01-01" end="{{productionDate}}" value="{{productionDate}}" bindchange="onDateChange" >
+      <!-- start="2000-01-01" end={{productionDate}} -->
+        {{productionDate}}
+      </picker>
+
+    </view>
+
+    <view class="form-cell inline">
+      <view>保质期</view>
+      <picker class="option" mode="multiSelector" value="{{storageNumArray}}" 
+        bindchange="qgDateChange"
+        bindcolumnchange="bindMultiPickerColumnChange"
+        range="{{[storageNumArray[storageDateIndex][storageTypeIndex], storageNumArray[storageNameIndex]]}}">
+        {{storageNumArray[storageDateIndex][storageTypeIndex][selectDateIndex]}}  
+        {{storageNumArray[storageNameIndex][storageTypeIndex]}}
+      </picker>
+      <!-- <picker class="selector" 
+        value="{{storageNumArray}}"
+        bindchange="qgDateChange" 
+        bindcolumnchange="bindMultiPickerColumnChange" >
+        <image class="selector" src="../../images/add/next.png" />
+      </picker> -->
+    </view>
+  </view>
+  <text  class="expiration_display">
+      预计到期日期: {{expirationDate}}
+  </text>
+  <view class="footer">
+    <view class="reset" bindtap="resetTodo">重置</view>
+    <view class="save" bindtap="saveTodo">添加</view>
+  </view>
+</view>
