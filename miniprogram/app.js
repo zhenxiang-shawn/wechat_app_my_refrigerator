@@ -6,8 +6,25 @@ App({
       // 用于存储待办记录的集合名称
       collection: 'refrigerator',
       // 最大文件上传数量
-      fileLimit: 2
+      fileLimit: 2,
+
+      // encode for querying
+      _QUERY_TYPE :  {
+        // Date
+        expired_food: 1,
+        almost_expired_food: 2,
+        fresh_food: 3,
+        // Category
+        vegetables: 4,
+        meats: 5,
+        fruits: 6,
+        snacks: 7,
+        dairy: 8,
+        others: 9
+      }
     }
+
+    
   },
 
   flag: false,

@@ -1,6 +1,5 @@
 // refrog home page
 
-
 Page({
 
   // 存储请求结果
@@ -20,19 +19,20 @@ Page({
     almost_die_food: [], // food will be expired in 3 days
     fresh_food: [],
     one_day_in_ms: 24 * 60 * 60 * 1000,
-    _QUERY_TYPE :  {
-      // Date
-      expired_food: 1,
-      almost_expired_food: 2,
-      fresh_food: 3,
-      // Category
-      vegetables: 4,
-      meats: 5,
-      fruits: 6,
-      snacks: 7,
-      dairy: 8,
-      others: 9
-    }
+    _QUERY_TYPE : getApp().globalData._QUERY_TYPE
+    // _QUERY_TYPE :  {
+    //   // Date
+    //   expired_food: 1,
+    //   almost_expired_food: 2,
+    //   fresh_food: 3,
+    //   // Category
+    //   vegetables: 4,
+    //   meats: 5,
+    //   fruits: 6,
+    //   snacks: 7,
+    //   dairy: 8,
+    //   others: 9
+    // }
   },
 
   onShow() {
@@ -196,12 +196,12 @@ Page({
     })
   },
 
-  toItemListPage(e) {
+  toItemListPageByDate(e) {
     // Query type: QUERY_TYPE
     console.log("test:", e.currentTarget.dataset)
     console.log("test:", e.currentTarget.dataset.query)
     wx.navigateTo({
-      url: '../../pages/items_list/index?query=' + e.currentTarget.dataset.query,
+      url: '../../pages/items_list_by_date/index?query=' + e.currentTarget.dataset.query,
     })
   }
 })
