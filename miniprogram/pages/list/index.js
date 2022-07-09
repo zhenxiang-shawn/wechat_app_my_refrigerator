@@ -201,7 +201,7 @@ Page({
     console.log("test:", e.currentTarget.dataset)
     console.log("test:", e.currentTarget.dataset.query)
     wx.navigateTo({
-      url: '../../pages/items_list_by_date/index?query=' + e.currentTarget.dataset.query,
+      url: '../items_list_by_date/index?query=' + e.currentTarget.dataset.query,
     })
   }
 })
