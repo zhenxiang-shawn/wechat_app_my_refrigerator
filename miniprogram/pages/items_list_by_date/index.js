@@ -1,7 +1,7 @@
 Page({
     
     data: {
-    
+        _QUERY_TYPE : getApp().globalData._QUERY_TYPE
     },
 
     onLoad(options) {
