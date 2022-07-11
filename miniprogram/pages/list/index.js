@@ -6,9 +6,6 @@ Page({
   data: {
     // all food
     all_food: [],
-    // todos: [], // 用户的所有待办事项
-    // pending: [], // 未完成待办事项
-    // finished: [] // 已完成待办事项
     
     // category
     cold: [],
@@ -20,19 +17,6 @@ Page({
     fresh_food: [],
     one_day_in_ms: 24 * 60 * 60 * 1000,
     _QUERY_TYPE : getApp().globalData._QUERY_TYPE
-    // _QUERY_TYPE :  {
-    //   // Date
-    //   expired_food: 1,
-    //   almost_expired_food: 2,
-    //   fresh_food: 3,
-    //   // Category
-    //   vegetables: 4,
-    //   meats: 5,
-    //   fruits: 6,
-    //   snacks: 7,
-    //   dairy: 8,
-    //   others: 9
-    // }
   },
 
   onShow() {
@@ -199,7 +183,10 @@ Page({
   toItemListPageByDate(e) {
     // Query type: QUERY_TYPE
     console.log("test:", e.currentTarget.dataset)
-    console.log("test:", e.currentTarget.dataset.query)
+    
+    // set global var : items to change the content to show 
+    getApp().globalData.items = e.currentTarget.dataset.items
+    
     wx.navigateTo({
       url: '../items_list_by_date/index?query=' + e.currentTarget.dataset.query,
     })

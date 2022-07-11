@@ -11,17 +11,21 @@ App({
       // encode for querying
       _QUERY_TYPE :  {
         // Date
-        expired_food: 1,
-        almost_expired_food: 2,
-        fresh_food: 3,
+        expired_food: 0,
+        almost_expired_food: 1,
+        fresh_food: 2,
         // Category
-        vegetables: 4,
-        meats: 5,
-        fruits: 6,
-        snacks: 7,
-        dairy: 8,
-        others: 9
-      }
+        vegetables: 3,
+        meats: 4,
+        fruits: 5,
+        snacks: 6,
+        dairy: 7,
+        others: 8
+      },
+      _QUERY_STR_ENG: ["Expired Food", "Almost Expired Food", "Fresh Food", "Vegetables", "Meats", "Fruits", "Snacks", "Dairy Product", "Others"],
+      _QUERY_STR_CN_ZH: ["已过期", "快过期", "新鲜", "蔬菜", "肉类", "水果", "零食", "奶制品", "其他"],
+      // save items by category & date
+      items: []
     }
 
     

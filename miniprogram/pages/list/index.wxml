@@ -18,7 +18,7 @@
       Date
     </view>
     
-    <view class="slide" wx:if="{{expired_food.length > 0}}" bindtap="toItemListPageByDate" data-query="{{_QUERY_TYPE.expired_food}}">
+    <view class="slide" wx:if="{{expired_food.length > 0}}" bindtap="toItemListPageByDate" data-query="{{_QUERY_TYPE.expired_food}}" data-items="{{expired_food}}">
       已过期
       <mp-badge content="{{expired_food.length}}" style="margin-left: 5px;" />
     </view>
